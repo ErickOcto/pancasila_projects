@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->longText('question');
+            $table->enum('difficulty', ['low', 'medium', 'hard']);
             $table->timestamps();
         });
     }
