@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('score')->default(0);
-            $table->boolean('isAdmin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
