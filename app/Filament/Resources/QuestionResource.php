@@ -23,7 +23,7 @@ class QuestionResource extends Resource
 {
     protected static ?string $model = Question::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard';
 
     public static function form(Form $form): Form
     {
@@ -42,7 +42,7 @@ class QuestionResource extends Resource
                 ])
                 ->required(),
 
-            Repeater::make('answers') // Relasi ke Answer
+            Repeater::make('answers')
                 ->relationship('answers')
                 ->label('Answers')
                 ->schema([
@@ -51,10 +51,10 @@ class QuestionResource extends Resource
                         ->required(),
                     Toggle::make('value')
                         ->label('Correct Answer')
-                        ->inline(false) // Checkbox untuk jawaban benar atau salah
+                        ->inline(false)
                         ->default(false),
                 ])
-                ->minItems(2) // Minimal dua pilihan jawaban
+                ->minItems(2)
                 ->required(),
             ]);
     }
@@ -89,6 +89,8 @@ class QuestionResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

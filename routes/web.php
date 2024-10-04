@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+
+// Landing Page Controller
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
+Route::get('/blogs/{slug}', [HomeController::class, 'blogDetails'])->name('detail_blog');
+Route::get('/leaderboard', [HomeController::class, 'leaderboard'])->name('leaderboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

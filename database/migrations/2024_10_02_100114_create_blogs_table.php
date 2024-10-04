@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreignId('blog_category_id')->constrained();
             $table->string('slug');
             $table->string('tags');
+            $table->bigInteger('viewers_count');
+            $table->boolean('isChoose')->default(0);
             $table->timestamps();
         });
     }

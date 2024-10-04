@@ -467,6 +467,11 @@ input::placeholder {
     box-shadow: 0px 4px 15px rgba(255, 128, 102, 0.35);
 }
 
+.pagination li.page-item{
+    background-color: var(--color-red) !important;
+    color: var(--color-red) !important;
+}
+
 .green-button:hover{
     color: var(--color-primary);
     transition: 0.5s;

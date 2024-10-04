@@ -55,7 +55,7 @@
         <nav class="container navbar navbar-expand-xl navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-testimonial" href="{{ route("home") }}">
-                    <img src="{{ asset("/assets/images/logo.svg") }}" alt="ruangTenang" />
+                    <img src="{{ asset("/assets/images/logo.svg") }}" alt="epancasila" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -63,8 +63,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav mx-auto my-4 my-lg-0">
-                        <a class="nav-link {{ request()->is("/") ? "active" : null }}" aria-current="page" href="{{ route("home") }}">Beranda</a>
+                    <div class="navbar-nav me-auto my-4 my-lg-0">
+                        <a class="nav-link {{ request()->is("/") ? "active" : null }}" aria-current="page" href="{{ route("home") }}">Home</a>
+                        <a class="nav-link {{ request()->is("blogs*") ? "active" : null }}" aria-current="page" href="{{ route("blogs") }}">Blogs</a>
+                        <a class="nav-link {{ request()->is("leaderboard") ? "active" : null }}" aria-current="page" href="{{ route("leaderboard") }}">Garuda Points</a>
                     </div>
                     <a class="tertiary-button text-end" href="{{ route("register") }}">
                         REGISTER
