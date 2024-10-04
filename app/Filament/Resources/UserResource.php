@@ -37,7 +37,7 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make("name"),
                 Tables\Columns\TextColumn::make("email"),
                 Tables\Columns\TextColumn::make("score")->sortable(),
-                Tables\Columns\TextColumn::make("created_at")->date(),
+                Tables\Columns\TextColumn::make("created_at")->label("Registered")->date(),
             ])
             ->filters([
                 //
