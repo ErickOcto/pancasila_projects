@@ -27,6 +27,6 @@ class HomeController extends Controller
     }
 
     public function leaderboard(){
-        return view();
+        return view('leaderboard');
     }
 }

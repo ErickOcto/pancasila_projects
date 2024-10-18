@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-10 col-lg-8 offset-lg-2 offset-1">
                 <div class="text-center text-white h2 mb-24">
-                  Artikel <span class="text-gradient-pink">Kesehatan</span> Lainnya
+                  Other <span class="text-gradient-pink">Article's</span>
                 </div>
                 <div class="row row-gap-4">
                     @forelse ($articles as $article)

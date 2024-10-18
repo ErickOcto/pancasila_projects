@@ -115,7 +115,7 @@
     <!-- START::TESTIMONIAL -->
     <section class="container-fluid py-100" id="testimonial">
       <div class="text-center text-white h2">
-        Apa Kata Mereka Tentang<br><span class="text-gradient-pink">epancasila</span> 🥳
+        What They Say About<br><span class="text-gradient-pink">epancasila</span> 🥳
       </div>
 
       <!-- TESTI DEKSTOP VERSION -->
@@ -149,8 +149,8 @@
                     <img src="{{ asset("/assets/images/faq.png") }}" alt="pp-4" class="photo-profile mr-16">
                   </div>
                   <div class="wrap">
-                    <h4 class="h4">Agus Wijayanto</h4>
-                    <h5 class="h5">Mahasiswa</h5>
+                    <h4 class="h4">fufufafa</h4>
+                    <h5 class="h5">Sigma</h5>
                   </div>
                 </div>
                 <h4 class="h4">⭐️⭐️⭐️⭐️</h4>

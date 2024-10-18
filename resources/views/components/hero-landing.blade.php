@@ -1,16 +1,16 @@
         <div class="hero d-flex justify-content-center" id="hero">
           <div class="wrap mx-5">
             <h1 class="h1 text-white mb-48" style="max-width: 720px;">
-                Selamat Datang di <span class="text-gradient-blue">epancasila!</span><br class="d-none d-lg-block" />
-                <span class="text-gradient-pink-2">Satukan Semangat, Jaga Kebhinekaan!</span>
+                Welcome to <span class="text-gradient-blue">epancasila!</span><br class="d-none d-lg-block" />
+                <span class="text-gradient-pink-2">Unite Spirit, Preserve Diversity!</span>
             </h1>
             <p class="h4 text-gray mb-48" style="max-width: 720px;">
-                Dapatkan pengetahuan lebih dalam tentang Pancasila dan kebangsaan Indonesia! Mulai perjalanan Anda untuk memahami, menghargai, dan menerapkan nilai-nilai luhur yang membentuk dasar bangsa kita.
+                Gain deeper knowledge about Pancasila and Indonesian nationhood! Start your journey to understand, appreciate, and apply the noble values ​​that form the foundation of our nation.
 
 
             </p>
             <a href="/dashboard" class="green-button h5">
-                MULAI SEKARANG
+                START NOW
             </a>
           </div>
         </div>

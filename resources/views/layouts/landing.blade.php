@@ -68,9 +68,15 @@
                         <a class="nav-link {{ request()->is("blogs*") ? "active" : null }}" aria-current="page" href="{{ route("blogs") }}">Blogs</a>
                         <a class="nav-link {{ request()->is("leaderboard") ? "active" : null }}" aria-current="page" href="{{ route("leaderboard") }}">Garuda Points</a>
                     </div>
-                    <a class="tertiary-button text-end" href="{{ route("register") }}">
-                        REGISTER
-                    </a>
+                    @if(Auth::check())
+                        <b class="text-white">
+                            Hello, {{ Auth::user()->name }}
+                        </b>
+                    @else
+                        <a class="tertiary-button text-end" href="{{ route("register") }}">
+                            REGISTER
+                        </a>
+                    @endif
                 </div>
             </div>
         </nav>
