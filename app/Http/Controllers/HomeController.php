@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +28,7 @@ class HomeController extends Controller
     }
 
     public function leaderboard(){
-        return view('leaderboard');
+        $items = User::orderBy('score', 'desc')->limit(10)->get();
+        return view('leaderboard', compact('items'));
     }
 }

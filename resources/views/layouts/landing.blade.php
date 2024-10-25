@@ -63,7 +63,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav me-auto my-4 my-lg-0">
+                    <div class="navbar-nav mx-auto my-4 my-lg-0">
                         <a class="nav-link {{ request()->is("/") ? "active" : null }}" aria-current="page" href="{{ route("home") }}">Home</a>
                         <a class="nav-link {{ request()->is("blogs*") ? "active" : null }}" aria-current="page" href="{{ route("blogs") }}">Blogs</a>
                         <a class="nav-link {{ request()->is("leaderboard") ? "active" : null }}" aria-current="page" href="{{ route("leaderboard") }}">Garuda Points</a>
