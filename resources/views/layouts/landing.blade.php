@@ -69,8 +69,8 @@
                         <a class="nav-link {{ request()->is("leaderboard") ? "active" : null }}" aria-current="page" href="{{ route("leaderboard") }}">Garuda Points</a>
                     </div>
                     @if(Auth::check())
-                        <b class="text-white">
-                            Hello, {{ Auth::user()->name }}
+                        <b class="text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer">
+                            {{ Auth::user()->name }}
                         </b>
                     @else
                         <a class="tertiary-button text-end" href="{{ route("register") }}">
@@ -87,6 +87,25 @@
     </header>
     <!-- END::HERO -->
 
+    @if(Auth::check())
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white;">{{ Auth::user()->name }}</h1>
+            <button style="color: white !important; background-color:white;" type="button" class="btn-close text-white " data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-white">
+            Your score : {{ Auth::user()->score }} <br>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button class="btn btn-danger mt-3">Logout</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endif
 
     @yield("landing-content")
 

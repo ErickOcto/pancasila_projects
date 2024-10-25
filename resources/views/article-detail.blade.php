@@ -11,10 +11,10 @@
                 </h1>
                 <div class="d-lg-flex mb-5 text-center align-items-center justify-content-center">
                     <div class="d-flex justify-content-center mr-48 mb-3 mb-lg-0 ">
-                        <img src="/assets/images/faq.png" alt="author" class="author mr-16">
+
                         <div class="wrap text-start">
                             <div class="article-category">
-                                <span class="text-gradient-pink">{{ $article->blogCategory->name }}</span>
+                                <span class="text-gradient-pink"><b>{{ $article->blogCategory->name }}</b></span>
                             </div>
                         </div>
                     </div>

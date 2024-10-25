@@ -11,6 +11,8 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{slug}', [HomeController::class, 'blogDetails'])->name('detail_blog');
 Route::get('/leaderboard', [HomeController::class, 'leaderboard'])->name('leaderboard');
+Route::get('/articleCategory/{id}', [HomeController::class, 'articleCategory'])->name('articleCategory');
+Route::get('/searchArticle', [HomeController::class, 'searchArticle'])->name('searchArticle');
 
 //Quiz
 Route::get('/quiz', [QuizController::class, 'quizPage'])->middleware(['auth', 'verified'])->name('quizPage');

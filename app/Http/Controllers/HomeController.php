@@ -23,12 +23,34 @@ class HomeController extends Controller
     public function blogDetails($slug){
         $article = Blog::where('slug', $slug)->first();
 
-        $articles = Blog::all();
+        $articles = Blog::where('slug', '!=', $slug)->get();
         return view('article-detail', compact('article', 'articles'));
     }
 
     public function leaderboard(){
         $items = User::orderBy('score', 'desc')->limit(10)->get();
         return view('leaderboard', compact('items'));
+    }
+
+    public function articleCategory($id){
+        $articles = Blog::where('blog_category_id', $id)->paginate(10);
+        $blog_name = BlogCategory::where('id', $id)->first();
+        $count = Blog::where('blog_category_id', $id)->count();
+        $categories = BlogCategory::all();
+        $chosenArticles = Blog::where('isChoose', 1)->get();
+        return view('article-category', compact('articles', 'count', 'blog_name', 'categories', 'chosenArticles'));
+    }
+
+    public function searchArticle(Request $request){
+        $query = $request->input('search');
+        $categories = BlogCategory::all();
+        $chosenArticles = Blog::where('isChoose', 1)->get();
+        if ($query) {
+            $articles = Blog::whereTitle('LIKE', "%{$query}%")->orWhere('tags', 'LIKE', "%{$query}%")->orWhere('content', 'LIKE', "%{$query}%")->paginate(10);
+            $count = $articles->count();
+        } else {
+            $articles = collect();
+        }
+        return view('searchArticle', compact('articles', 'categories', 'chosenArticles', 'count', 'query'));
     }
 }

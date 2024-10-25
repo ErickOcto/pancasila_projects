@@ -18,7 +18,7 @@
         <div class="row d-flex row-gap-5">
 
             <div class="col-12 col-lg-8 flex-nowrap order-last order-lg-first">
-                <form action="{{ route('searchArticle') }}" class="input-group flex-nowrap mb-48" method="GET"
+                <form action="{{ route('searchArticle') }}"  class="input-group flex-nowrap mb-48" method="GET"
                     style="border-radius: 12px">
                     @csrf
                     <input type="text" name="search" class="form-control search text-white" placeholder="Search Article"
@@ -29,6 +29,9 @@
                 <div id="articles-container"></div>
 
                 <div class="row">
+
+                    <p class="h3 text-white mb-48
+                    "><span class="text-gradient-pink">{{ $count }}</span> "{{ $query }}" Article Founded</p>
                     @foreach ($articles as $article)
                         {{-- <div class="divider-2"></div> --}}
                         <a href="/blogs/{{ $article['slug'] }}" class="card-article-page text-decoration-none my-2">
