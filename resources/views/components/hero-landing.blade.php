@@ -9,7 +9,7 @@
 
 
             </p>
-            <a href="/dashboard" class="green-button h5">
+            <a href="/quiz" class="green-button h5">
                 START NOW
             </a>
           </div>

@@ -8,21 +8,17 @@
 
     <section class="container table-responsive my-3 " style="border-radius: 16px !important;">
         <div class="row">
-            <div class="col-12 col-lg-8 offset-lg-2">
-                <table class="table table-hover" style="border-radius: 16px !important;">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Name</th>
-                      <th class="text-end" scope="col">Garuda Points</th>
-                    </tr>
-                  </thead>
+            <div class="col-12 col-lg-8 offset-lg-2" style="border-radius: 16px !important; border: #a60800 2px solid; box-shadow: 0 0 15px #a60800;">
+                <table class="my-5 mx-4 bg-b w-100 text-white">
                   <tbody>
-                    @foreach ($items as $item)
                         <tr>
-                          <th scope="row">{{ $loop->iteration }}</th>
-                          <td>{{ $item->name }}</td>
-                          <td class="text-end px-5">{{ $item->score }}</td>
+                            <td colspan="3" class="text-center pb-5"><h2 style="color: #a60800">Garuda</h2><h2>Leaderboard</h2></td>
+                        </tr>
+                    @foreach ($items as $item)
+                        <tr class="py-3">
+                          <th scope="row"><h3>{{ $loop->iteration }}</h3></th>
+                          <td><h3>{{ $item->name }}</h3></td>
+                          <td class="text-end px-5 py-3"><h3>{{ $item->score }}</h3></td>
                         </tr>
                     @endforeach
                   </tbody>

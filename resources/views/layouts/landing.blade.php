@@ -30,6 +30,12 @@
     <!-- Custom Styling -->
     <link rel="stylesheet" href="{{ asset("/assets/style.css") }}">
 
+    <style>
+        .dropdown-item.active{
+            background: #a60800;
+        }
+    </style>
+
 
     <!-- AOS Library -->
      <link href="{{ url("https://unpkg.com/aos@2.3.1/dist/aos.css") }}" rel="stylesheet">
@@ -63,11 +69,42 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav mx-auto my-4 my-lg-0">
-                        <a class="nav-link {{ request()->is("/") ? "active" : null }}" aria-current="page" href="{{ route("home") }}">Home</a>
-                        <a class="nav-link {{ request()->is("blogs*") ? "active" : null }}" aria-current="page" href="{{ route("blogs") }}">Blogs</a>
-                        <a class="nav-link {{ request()->is("leaderboard") ? "active" : null }}" aria-current="page" href="{{ route("leaderboard") }}">Garuda Points</a>
-                    </div>
+                    <ul class="navbar-nav mx-auto my-4 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is("/") ? "active" : null }}" aria-current="page" href="{{ route("home") }}">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link {{ request()->is("blogs*") ? "active" : null }}" aria-current="page" href="{{ route("blogs") }}">Blogs</a>
+                        </li>
+                        <li>
+                            <a class="nav-link {{ request()->is("leaderboard") ? "active" : null }}" aria-current="page" href="{{ route("leaderboard") }}">Garuda Points</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                          </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item {{ session('locale') == 'en' ? 'active' : '' }}"
+                                       href="{{ route('change-language', ['locale' => 'en']) }}">
+                                       English
+                                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/2048px-United-kingdom_flag_icon_round.svg.png"
+                                            style="width: 20px; height:20px" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ session('locale') == 'id' ? 'active' : '' }}"
+                                       href="{{ route('change-language', ['locale' => 'id']) }}">
+                                       Indonesia
+                                       <img src="https://www.svgrepo.com/show/242361/indonesia.svg"
+                                            style="width: 20px; height:20px" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                        </li>
+                    </ul>
                     @if(Auth::check())
                         <b class="text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer">
                             {{ Auth::user()->name }}
@@ -147,7 +184,7 @@
 
 
     <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="{{ url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js") }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- AOS LIBRARY -->
@@ -156,7 +193,6 @@
     <script>
       AOS.init();
     </script>
-
     <!-- JS Custom -->
      <script src="/assets/index.js"></script>
      <script src="{{ asset("/assets/index.js") }}"></script>
